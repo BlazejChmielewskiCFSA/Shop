@@ -1,9 +1,6 @@
 package pl.chmielewski.MyShop.BootsEntity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +20,10 @@ public class ProductEntity {
     private String name;
     private BigDecimal price;
     private String imageURL;
-    private Color color;
     private int discount;
+
+    @Enumerated(EnumType.STRING)
+    private Color color;
 
     public ProductEntity(String name, BigDecimal price, String imageURL, Color color, int discount) {
         this.name = name;
