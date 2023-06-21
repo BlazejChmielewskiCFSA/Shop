@@ -19,11 +19,11 @@ public class ProductEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String bootCode;
     private String name;
     private BigDecimal price;
     private String imageURL;
     private int discount;
-    private String bootCode;
     @Enumerated(EnumType.STRING)
     private Color color;
 }
