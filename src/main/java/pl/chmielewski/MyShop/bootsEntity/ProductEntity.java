@@ -1,4 +1,4 @@
-package pl.chmielewski.MyShop.BootsEntity;
+package pl.chmielewski.MyShop.bootsEntity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

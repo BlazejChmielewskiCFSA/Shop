@@ -2,8 +2,10 @@ package pl.chmielewski.MyShop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.chmielewski.MyShop.BootsEntity.ProductEntity;
-import pl.chmielewski.MyShop.BootsEntity.ProductRepo;
+import pl.chmielewski.MyShop.bootsEntity.ProductEntity;
+import pl.chmielewski.MyShop.bootsEntity.ProductRepo;
+import pl.chmielewski.MyShop.exceptions.UserNotFounException;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -17,8 +19,9 @@ public class BootsService {
         this.productRepo = productRepo;
     }
 
-    public void setBootCode(ProductEntity productEntity){
+    public ProductEntity addBoots(ProductEntity productEntity){
         productEntity.setBootCode(UUID.randomUUID().toString());
+        return productRepo.save(productEntity);
     }
 
     public List<ProductEntity> findAllBoots(){
@@ -29,7 +32,12 @@ public class BootsService {
         return productRepo.save(productEntity);
     }
 
-    public void deleteById(Long id){
-        productRepo.deleteBootById(id);
+    public ProductEntity findBootById(Long id){
+        return productRepo.findBootById(id)
+                .orElseThrow(()-> new UserNotFounException("User by id: " + id + " was not found"));
+    }
+
+    public void deleteBoots(Long id){
+        productRepo.deleteBootsById(id);
     }
 }

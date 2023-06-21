@@ -1,4 +1,4 @@
-package pl.chmielewski.MyShop.BootsEntity;
+package pl.chmielewski.MyShop.bootsEntity;
 
 public enum Color {
     RED, BLUE, GREEN, DARK, BROWN, YELLOW
