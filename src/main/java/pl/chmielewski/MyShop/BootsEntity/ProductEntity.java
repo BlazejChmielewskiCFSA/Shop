@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
@@ -13,24 +14,16 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductEntity {
+public class ProductEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private BigDecimal price;
     private String imageURL;
     private int discount;
-
+    private String bootCode;
     @Enumerated(EnumType.STRING)
     private Color color;
-
-    public ProductEntity(String name, BigDecimal price, String imageURL, Color color, int discount) {
-        this.name = name;
-        this.price = price;
-        this.imageURL = imageURL;
-        this.color = color;
-        this.discount = discount;
-    }
 }
