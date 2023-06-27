@@ -5,3 +5,14 @@
 "discount":"0",
 "color":"RED"
 }
+{
+"name":"Nike Dunk High Retro",
+"price":"549.99",
+"imageURL":"https://github.com/BlazejChmielewskiCFSA/Shop/blob/main/img/NikeDunkHighRetro.jpg",
+"discount":"10",
+"color":"BLACK"
+}
+
+
+
+

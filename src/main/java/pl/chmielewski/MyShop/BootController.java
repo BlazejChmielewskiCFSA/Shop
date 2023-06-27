@@ -34,7 +34,7 @@ public class BootController {
         return new ResponseEntity<>(newProductEntity, HttpStatus.OK);
     }
 
-    @PutMapping("/add")
+    @PutMapping("/update")
     public ResponseEntity<ProductEntity> updateBoots(@RequestBody ProductEntity productEntity){
         ProductEntity updatedProductEntity = bootsService.addBoots(productEntity);
         return new ResponseEntity<>(updatedProductEntity, HttpStatus.CREATED);
